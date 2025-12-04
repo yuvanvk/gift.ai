@@ -44,7 +44,7 @@ export const AIMessageInput = () => {
         setMessages((p) => p.map((msg) => 
             msg.type === "ai" && msg.message === "Thinking..." ? { ...msg, message: aiResponse } : msg
         ))
-        
+
       }
     } catch (error) {
       console.log(error);
@@ -52,7 +52,7 @@ export const AIMessageInput = () => {
   };
 
   return (
-    <div className="max-w-4xl w-full flex items-center gap-2 px-4 py-1 rounded-full absolute bottom-5 left-1/2 -translate-x-1/2 border focus:ring-0 focus:ring-offset-0 outline-none bg-neutral-800">
+    <div className="w-full md:max-w-2xl lg:max-w-4xl  flex items-center gap-2 px-4 py-1 rounded-full absolute bottom-5 left-1/2 -translate-x-1/2 border focus:ring-0 focus:ring-offset-0 outline-none bg-neutral-800">
       <Input
         onChange={handleUserInputChange}
         className="border-none shadow-md"

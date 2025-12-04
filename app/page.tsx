@@ -4,14 +4,14 @@ import { AIMessageInput } from "@/components/ui/ai-input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { MessageContext } from "@/context/MessageContext";
 import { cn } from "@/lib/utils";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 export default function Home() {
-  const { messages, setMessages } = useContext(MessageContext);
+  const { messages } = useContext(MessageContext);
 
   
   return (
-    <div className="max-w-7xl mx-auto h-screen">
+    <div className="max-w-7xl mx-auto h-screen px-4">
       <ScrollArea className="h-full w-full relative my-3 flex flex-col">
         {messages && messages.map((message: any) => {
           return <div key={message.id} className={cn(`flex ${message.type === "ai" ? "justify-start" : "justify-end"}`)}>
