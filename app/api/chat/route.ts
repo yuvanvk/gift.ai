@@ -3,9 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
     const { userMessage } = await req.json();
-    console.log(userMessage);
-    
-    
+  
     const reponse = await ai.models.generateContent({
         model: "gemini-2.5-flash",
         contents: userMessage,
